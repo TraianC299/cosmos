@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');html,
+
+/* :root {
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+} */
+
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: #118cfd;
+  --primary-hover: #118cfd;
+  --primary-focus: rgba(142, 36, 170, 0.125);
+  --primary-inverse: #FFF;
+  --color:#fff;
+}
+
+/* Purple Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary: #118cfd;
+    --primary-hover: #118cfd;
+    --primary-focus: rgba(142, 36, 170, 0.25);
+    --primary-inverse: #FFF;
+  }
+}
+
+/* Purple Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme="dark"] {
+  --primary: #118cfd;
+  --primary-hover: #118cfd;
+  --primary-focus: rgba(142, 36, 170, 0.25);
+  --primary-inverse: #FFF;
+}
+
+/* Purple (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --form-element-spacing-vertical: 0.5rem;
+  --form-element-spacing-horizontal: 0.75rem;
+  --font-size: 1rem;
+  --color:#ff0000;
+}
+
+
+
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+.glass{
+  background: rgba(255, 255, 255, 0.2);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+button{
+  cursor: pointer;
+  border: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, small {
+  margin: 0;
+}
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+
+
+
+.text-gray{
+  color: #8a8a8a;
+}
+.relative{
+  position: relative;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.fixed{
+  position: fixed;
+}
+.sticky{
+  position: sticky;
+}
+
+.top-0{
+  top: 0;
+}
+
+.bottom-0{
+  bottom: 0;
+}
+
+.left-0{
+  left: 0;
+}
+
+.right-0{
+  right: 0;
+}
+.font-light{
+  font-weight: 300;
+}
+.font-normal{
+  font-weight: 400;
+}
+
+.font-medium{
+  font-weight: 500;
+}
+.font-semibold{
+  font-weight: 600 !important;
+}
+.font-bold{
+  font-weight: 700;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.caption{
+  font-size: 0.75rem;
+  color: rgb(130, 139, 162);
+}
+
+.rounded{
+  border-radius: 50%;
+}
+
+.pointer{
+  cursor: pointer;
+}
+.flex {
+  display: flex;
+}
+.scroll{
+  overflow: scroll;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.grid{
+  display: grid;
+}
+
+.row{
+  flex-direction: row;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.jc{
+  justify-content: center;
+}
+.jsb{
+  justify-content: space-between;
+}
+.jfs{
+  justify-content: flex-start;
+}
+.jfe{
+  justify-content: flex-end;
+}
+
+.ac{
+  align-items: center;
+}
+.afs{
+  align-items: flex-start;
+}
+
+.afe{
+  align-items: flex-end;
+}
+.flex-1 {
+  flex: 1;
+}
+
+
+.w-full{
+  width: 100%;
+}
+
+.h-full{
+  height:100%;
+}
+.gap-1{
+  gap: 0.25rem;
+}
+.gap-2{
+  gap: 0.5rem;
+}
+
+.gap-4{
+  gap:1rem;
+}
+
+
+.gap-8{
+  gap:2rem;
+}
+
+.center {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
+
+
+.m-0 {
+  margin: 0 !important;
+}
+.m-1 {
+  margin: 0.25rem !important;
+}
+
+.m-2 {
+  margin: 0.5rem !important;
+}
+
+.m-3 {
+  margin: 0.75rem !important;
+}
+
+.m-4 {
+  margin: 1rem !important;
+}
+.m-8 {
+  margin: 2rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-8 {
+  margin-bottom: 2rem !important;
+}
+.m-auto{
+  margin: auto;
+}
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+.maxWidth{
+  max-width: 1240px;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+
+.mt-3 {
+  margin-top: 0.75rem !important;
+}
+
+.mt-4 {
+  margin-top: 1rem !important;
+}
+
+.mt-8 {
+  margin-top: 2rem !important;
+}
+.mt-auto {
+  margin-top: auto !important;
+}
+
+
+.p-1 {
+  padding: 0.25rem !important;
+}
+
+.p-2 {
+  padding: 0.5rem !important;
+}
+
+
+.p-3 {
+  padding: 0.75rem !important;
+}
+
+
+.p-4 {
+  padding: 1rem !important;
+}
+
+.p-5 {
+  padding: 1.25rem !important;
+}
+
+.p-6 {
+  padding: 1.5rem !important;
+}
+
+.p-7 {
+  padding: 1.75rem !important;
+}
+
+.p-8 {
+  padding: 2rem !important;
+}
+
+
+
+
+.sectionPadding{
+  max-width: 1300px;
+  margin:auto;
+}
+
+
+.border-b-1{
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.border-1{
+  border: 1px solid #E8E8E8;
+}
+.border-b-2{
+  border-bottom: 1px solid #E8E8E8;
+}
+
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+ 
+}
